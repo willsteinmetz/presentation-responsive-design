@@ -1,0 +1,23 @@
+{
+  "name": "responsive-design",
+  "version": "0.0.0",
+  "authors": [
+    "Will Steinmetz <will.steinmetz@scimedsolutions.com>"
+  ],
+  "description": "responsive design demo",
+  "main": "index.html",
+  "license": "none",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "normalize-scss": "~3.0.2",
+    "keroseen-grid": "~0.6.0"
+  }
+}
