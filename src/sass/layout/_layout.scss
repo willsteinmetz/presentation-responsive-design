@@ -1,0 +1,11 @@
+//
+// @file _layout.scss
+// @author Will Steinmetz <will.steinmetz@scimedsolutions.com>
+// layout styles
+//
+
+// variables needed for imports
+$keroseen-grids: 16;
+$keroseen-grids-portrait-breaks: true;
+
+@import '../../bower_components/keroseen-grid/src/sass/grid';
