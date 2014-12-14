@@ -18,6 +18,7 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "keroseen-grid": "~0.6.0",
-    "normalize-css": "~3.0.2"
+    "normalize-css": "~3.0.2",
+    "font-awesome": "~4.2.0"
   }
 }

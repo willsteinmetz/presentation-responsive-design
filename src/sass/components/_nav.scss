@@ -1,0 +1,25 @@
+//
+// @file components/_nav.scss
+// @author Will Steinmetz <will.steinmetz@scimedsolutions.com>
+// nav components styles
+//
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-horizontal {
+  li {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.footer-nav {
+  box-sizing: border-box;
+  width: 50%;
+  float: right;
+  padding: 1rem;
+}

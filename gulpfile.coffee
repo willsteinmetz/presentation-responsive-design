@@ -31,13 +31,14 @@ gulp.task 'sass', ->
 # styles task
 gulp.task 'styles', ['sass'], ->
   gulp.src [
-    'bower_components/normalize-css/normalize.css',
+    'bower_components/normalize-css/normalize.css'
+    'bower_components/font-awesome/css/font-awesome.css'
     'src/css/**/*.css'
   ]
     .pipe concat 'demo.css'
     .pipe rename
       suffix: '.min'
-    .pipe minifycss()
+#    .pipe minifycss()
     .pipe gulp.dest 'dist/css'
 
 # coffee task
@@ -53,7 +54,7 @@ gulp.task 'scripts', ['coffee'], ->
     .pipe concat 'demo.js'
     .pipe rename
       suffix: '.min'
-    .pipe uglify()
+#    .pipe uglify()
     .pipe gulp.dest 'dist/js'
 
 # html task
@@ -73,9 +74,13 @@ gulp.task 'clean', ->
     'src/js/**/*.js'
   ]
 
+gulp.task 'copyfonts', ->
+   gulp.src './bower_components/font-awesome/fonts/**/*.{ttf,woff,eof,svg}'
+    .pipe gulp.dest './dist/fonts'
+
 # default task
 #gulp.task 'default', ['clean', 'styles', 'coffee', 'html']#, 'scripts', 'images']
-gulp.task 'default', ['clean', 'styles', 'scripts']
+gulp.task 'default', ['clean', 'styles', 'scripts', 'copyfonts']
 
 # watch task
 gulp.task 'watch', ->
