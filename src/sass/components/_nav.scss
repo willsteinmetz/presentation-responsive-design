@@ -17,9 +17,25 @@
   }
 }
 
+@media screen and (max-width: 567px) {
+  .nav-vertical {
+    li {
+      line-height: 1.75em;
+    }
+  }
+}
+
 .footer-nav {
   box-sizing: border-box;
   width: 50%;
   float: right;
   padding: 1rem;
+}
+
+@media screen and (max-width: 567px) {
+  .footer-nav {
+    width: 100%;
+    float: none;
+    font-size: .875rem;
+  }
 }

@@ -21,8 +21,19 @@ $keroseen-grids-portrait-breaks: true;
   max-width: (1200rem/16);
 }
 
-#l-site-header {
+@mixin layout_defaults_small {
+  position: relative;
+  z-index: 100;
+  margin-left: 0;
+}
+
+@mixin transition_defaults {
+  transition: all 0.15s ease-in-out;
+}
+
+.l-site-header {
   @include layout_defaults();
+  @include transition_defaults();
   background-color: #069;
   color: #fff;
   padding: 0.75rem;
@@ -30,9 +41,27 @@ $keroseen-grids-portrait-breaks: true;
     font-size: 2rem;
     font-weight: bold;
   }
+  .fa-navicon {
+    display: none;
+  }
 }
 
-#l-top-nav {
+@media screen and (max-width: 567px) {
+  .l-site-header {
+    @include layout_defaults_small();
+    width: 100%;
+    .fa-navicon {
+      display: block;
+      position: absolute;
+      top: (10rem/14);
+      right: (10rem/14);
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.l-top-nav {
   @include layout_defaults();
   background-color: #000;
   color: #fff;
@@ -40,26 +69,66 @@ $keroseen-grids-portrait-breaks: true;
     color: #eee;
     text-decoration: none;
     font-weight: bold;
+    font-size: (20rem/16);
     &:hover, &:focus {
       text-decoration: underline;
     }
   }
 }
 
+@media screen and (max-width: 1023px) {
+  .l-top-nav {
+    a {
+      i.fa {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .l-top-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: (300rem/14);
+    z-index: 0;
+    box-sizing: border-box;
+    padding: 1rem;
+    .nav-vertical {
+      li {
+        padding: 1rem 0;
+        border-bottom: solid 1px #777;
+      }
+    }
+  }
+}
+
 main {
   @include layout_defaults();
+  @include transition_defaults();
   background-color: #fff;
   color: #666;
 }
 
-#l-site-footer {
+@media screen and (max-width: 567px) {
+  main {
+    @include layout_defaults_small();
+    width: 100%;
+  }
+}
+
+.l-site-footer {
   @include layout_defaults();
   @include clearfix();
+  @include transition_defaults();
   background-color: #036;
   color: #fff;
   a {
     color: #fff;
     font-weight: bold;
+    font-size: (20rem/16);
     text-decoration: none;
     &:hover, &:focus {
       text-decoration: underline;
@@ -70,5 +139,37 @@ main {
     width: 50%;
     float: left;
     padding: 1rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .l-site-footer {
+    a {
+      i.fa {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .l-site-footer {
+    @include layout_defaults_small();
+    width: 100%;
+    a {
+      font-size: 0.9125rem;
+      line-height: 1.5;
+    }
+    div {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .is-slid {
+    margin-left: (-300rem/14);
   }
 }
